@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/RabbitFarm.Application/bin/Debug/net6.0
+/RabbitFarm.Application/obj
+/RabbitFarm.Domain/bin/Debug/net6.0
+/RabbitFarm.Domain/obj
+/RabbitFarm.Tests/obj
+/RabbitFarmInfrastructer/bin/Debug/net6.0
+/RabbitFarmInfrastructer/obj
+/RabbitFarmService/bin/Debug/net6.0
+/RabbitFarmService/obj/Debug/net6.0
+/RabbitFarmService/obj

@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+ 
+  "profiles": {
+    "RabbitFarmService_dev": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5074",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+
+    "RabbitFarmService_prod":
+    {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5074",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    }
+ 
+  }
+}
