@@ -13,3 +13,7 @@
 /RabbitFarmService/bin/Debug/net6.0
 /RabbitFarmService/obj/Debug/net6.0
 /RabbitFarmService/obj
+/RabbitFarm.Tests/bin/Debug/net6.0
+/RabbitFarmService/RabbitFarm.Db
+/RabbitFarmService/RabbitFarm.Db-shm
+/RabbitFarmService/RabbitFarm.Db-wal

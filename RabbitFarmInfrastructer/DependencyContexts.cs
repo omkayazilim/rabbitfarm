@@ -10,7 +10,7 @@ namespace RabbitFarmInfrastructer
     {
         public static IServiceCollection AddInfrastructures(this IServiceCollection services, IConfiguration config) 
         {
-            services.AddSingleton<IAppDbContext,AppSqliteDbContext>();
+            services.AddScoped<IAppDbContext, AppSqliteDbContext>();
             return services;
         
         }

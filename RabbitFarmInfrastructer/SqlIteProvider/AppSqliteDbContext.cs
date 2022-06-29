@@ -51,7 +51,7 @@ namespace RabbitFarmInfrastructer.SqlIteProvider
             var builder = new DbContextOptionsBuilder<AppSqliteDbContext>();
             string connectionString = config[$"ConnectionStrings:Default"];
             builder.UseSqlite(connectionString);
-            return new AppSqliteDbContext();
+            return new AppSqliteDbContext(builder.Options);
         }
     }
 }

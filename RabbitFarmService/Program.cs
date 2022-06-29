@@ -6,12 +6,10 @@ using RabbitFarmService;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseSerilog((hostContext, services, configuration) => { configuration.WriteTo.Console(); });
-// Add services to the container.
 builder.Services.AddInfrastructures(builder.Configuration);
-IocConfiguration.RegisterAllDependencies(builder.Services, builder.Configuration);
 builder.Services.AddDbContext<AppSqliteDbContext>(opt => { opt.SetSqlServerOptions(builder.Configuration); });
-
+builder.Host.UseSerilog((hostContext, services, configuration) => { configuration.WriteTo.Console(); });
+IocConfiguration.RegisterAllDependencies(builder.Services, builder.Configuration);
 builder.Services.AddCors(options => {
     options.AddPolicy("localhost", bb => {
         bb.WithOrigins(
@@ -27,17 +25,13 @@ builder.Services.AddCors(options => {
 });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
     // For sqlite 
        using (var scope = app.Services.CreateScope()) 
     {

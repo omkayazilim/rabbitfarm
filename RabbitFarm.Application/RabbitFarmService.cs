@@ -2,6 +2,7 @@
 using RabbitFarm.Domain;
 using RabbitFarm.Domain.Dtos;
 using RabbitFarm.Domain.Entities;
+using RabbitFarm.Domain.Interfaces;
 using RabbitFarmInfrastructer.AppDbProviders;
 using Serilog;
 using System;
@@ -13,7 +14,7 @@ using System.Timers;
 
 namespace RabbitFarm.Application
 {
-    public interface IRabbitFarmService
+    public interface IRabbitFarmService: IScopedDependency
     {
         Task<Boolean> SetAppDinemsions(AppDimensionsInput? config);
         Task<AppDimensionsDto> GetAppDinemsions();
@@ -88,8 +89,8 @@ namespace RabbitFarm.Application
                 Pregnancyduration = config.Pregnancyduration
             });
 
-            var result = await _context.SaveChangesAsync();
-            return result > 0 ? true : false;
+          await _context.SaveChangesAsync();
+            return true ;
         }
 
         public  async Task StartRabbitFarmSimulation() 
