@@ -20,8 +20,12 @@ namespace RabbitFarm.Application
             await ctx.SaveChangesAsync();
             await ctx.Animal.AddRangeAsync(new List<Animals>()
             {
-                new Animals { AnimalSexType=AnimalSexType.Male , AnimalType=cfg.AnimalType,  AnimalStatus= AnimalStatus.Adult},
-                new Animals { AnimalSexType=AnimalSexType.FeMale ,AnimalType=cfg.AnimalType,  AnimalStatus= AnimalStatus.Adult}
+                new Animals { 
+                    AnimalSexType=AnimalSexType.Male , 
+                    AnimalType=cfg.AnimalType?? "",  
+                    AnimalStatus= AnimalStatus.Adult
+                },
+                new Animals { AnimalSexType=AnimalSexType.FeMale ,AnimalType=cfg.AnimalType??"",  AnimalStatus= AnimalStatus.Adult}
             });
 
             await ctx.SaveChangesAsync();
