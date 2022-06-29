@@ -10,7 +10,7 @@ builder.Host.UseSerilog((hostContext, services, configuration) => { configuratio
 // Add services to the container.
 builder.Services.AddInfrastructures(builder.Configuration);
 IocConfiguration.RegisterAllDependencies(builder.Services, builder.Configuration);
-builder.Services.AddDbContext<AppSqliteDbContext>();
+builder.Services.AddDbContext<AppSqliteDbContext>(opt => { opt.SetSqlServerOptions(builder.Configuration); });
 
 builder.Services.AddCors(options => {
     options.AddPolicy("localhost", bb => {
@@ -39,7 +39,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 
     // For sqlite 
-       using (var scope = app.Services.CreateScope()) {
+       using (var scope = app.Services.CreateScope()) 
+    {
            var context = scope.ServiceProvider.GetService<AppSqliteDbContext>();
            if (context != null) await context.Database.MigrateAsync();
         }

@@ -15,9 +15,14 @@ namespace RabbitFarmInfrastructer
         
         }
 
+        public static void SetSqlServerOptions(this DbContextOptionsBuilder builder, IConfiguration conf)
+        {
+            string connectionString = conf[$"ConnectionStrings:Default"];
+            builder.UseSqlite(connectionString);
 
-      
+        }
 
-   
+
+
     }
 }

@@ -1,6 +1,4 @@
 ﻿
-
-
 using RabbitFarm.Application;
 
 namespace RabbitFarmService
@@ -9,7 +7,7 @@ namespace RabbitFarmService
     {
         public static void RegisterAllDependencies(IServiceCollection services, IConfiguration config)
         {
-            services.AddScoped<IRabbitFarmBussiness, RabbitFarmBussiness>();
+            services.AddScoped<IRabbitFarmService, RabbitFarm.Application.RabbitFarmService>();
    
         }
 

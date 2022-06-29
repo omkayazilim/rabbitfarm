@@ -13,7 +13,7 @@ using System.Timers;
 
 namespace RabbitFarm.Application
 {
-    public interface IRabbitFarmBussiness
+    public interface IRabbitFarmService
     {
         Task<Boolean> SetAppDinemsions(AppDimensionsInput? config);
         Task<AppDimensionsDto> GetAppDinemsions();
@@ -22,17 +22,17 @@ namespace RabbitFarm.Application
         Task<FarmStatusReportDto> GetRabbitFarmSimulationStatusReport();
     }
 
-    public class RabbitFarmBussiness : IRabbitFarmBussiness
+    public class RabbitFarmService : IRabbitFarmService
     {
         private  ILogger _logger;
         private readonly IAppDbContext _context;
         private readonly System.Timers.Timer _timer;
         private static string TimerToken="Stop";
-        public RabbitFarmBussiness(IAppDbContext context)
+        public RabbitFarmService(IAppDbContext context)
         {
             _context = context;
             _timer=  new System.Timers.Timer(10000);
-            _logger= Log.ForContext<RabbitFarmBussiness>();
+            _logger= Log.ForContext<RabbitFarmService>();
         }
 
        

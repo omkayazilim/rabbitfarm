@@ -7,16 +7,16 @@ namespace RabbitFarmService.Controllers
 {
     public class RabbitFarmController:ControllerBase
     {
-        private readonly IRabbitFarmBussiness _farmBussiness;
-        public RabbitFarmController(IRabbitFarmBussiness farmBussiness) {
+        private readonly IRabbitFarmService _farmBussiness;
+        public RabbitFarmController(IRabbitFarmService farmBussiness) {
           _farmBussiness = farmBussiness;   
 
         }
 
         [HttpPost("SetAppDinemsions")]
-        public Task<Boolean> SetAppDinemsions([FromBody] AppDimensionsInput? config)
+        public async Task<Boolean> SetAppDinemsions([FromBody] AppDimensionsInput? config)
         {
-            return _farmBussiness.SetAppDinemsions(config);
+            return await _farmBussiness.SetAppDinemsions(config);
         }
 
         [HttpGet("GetAppDinemsions")]
