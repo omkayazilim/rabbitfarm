@@ -9,6 +9,7 @@ namespace RabbitFarmInfrastructer.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+
             migrationBuilder.CreateTable(
                 name: "T_Animals",
                 columns: table => new
