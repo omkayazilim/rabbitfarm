@@ -21,7 +21,7 @@ namespace RabbitFarm.Tests
     {
         private readonly Fixture _fixture;
         private Mock<IAppDbContext> _dbMock;
-        private readonly IRabbitFarmService _rabbitFarmService;  
+        private  IRabbitFarmService _rabbitFarmService;  
         public RabbitFarmServiceTests()
         {
              _fixture = new Fixture();
@@ -35,7 +35,7 @@ namespace RabbitFarm.Tests
 
             var dbset = DbMockHelper.CreateMockDbSet<AppDimensions>(_fixture.Build<AppDimensions>().CreateMany(3).ToList());
             _dbMock.Setup(x=>x.AppDimension).Returns(dbset);
-            var _rabbitFarmService = new Application.RabbitFarmService(_dbMock.Object);
+            _rabbitFarmService = new Application.RabbitFarmService(_dbMock.Object);
             var result= await _rabbitFarmService.GetAppDinemsions();
 
             /// Assert

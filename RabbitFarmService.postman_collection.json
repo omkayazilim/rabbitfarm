@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "08f4128e-2c3a-4cc4-b32e-a11c0d2e039e",
+		"name": "RabbitFarmService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4728204"
+	},
+	"item": [
+		{
+			"name": "/SetAppDinemsions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"maxDoPerBornCount\": 6735690,\n  \"maxDoBornCount\": -32733636,\n  \"maxLifeMinutes\": -63575223,\n  \"waitMinutes\": -63001624,\n  \"pregnancyduration\": {\n    \"ticks\": 88597188,\n    \"days\": 94222413,\n    \"hours\": -16825939,\n    \"milliseconds\": -6171517,\n    \"minutes\": -28905602,\n    \"seconds\": -73802804\n  },\n  \"appLifeTime\": {\n    \"ticks\": 84062209,\n    \"days\": -23426187,\n    \"hours\": -57092,\n    \"milliseconds\": 83856027,\n    \"minutes\": 37715954,\n    \"seconds\": 29906837\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/SetAppDinemsions"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"maxDoPerBornCount\": 6735690,\n  \"maxDoBornCount\": -32733636,\n  \"maxLifeMinutes\": -63575223,\n  \"waitMinutes\": -63001624,\n  \"pregnancyduration\": {\n    \"ticks\": 88597188,\n    \"days\": 94222413,\n    \"hours\": -16825939,\n    \"milliseconds\": -6171517,\n    \"minutes\": -28905602,\n    \"seconds\": -73802804\n  },\n  \"appLifeTime\": {\n    \"ticks\": 84062209,\n    \"days\": -23426187,\n    \"hours\": -57092,\n    \"milliseconds\": 83856027,\n    \"minutes\": 37715954,\n    \"seconds\": 29906837\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/SetAppDinemsions"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "true"
+				}
+			]
+		},
+		{
+			"name": "/GetAppDinemsions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain"
+					}
+				],
+				"url": "{{baseUrl}}/GetAppDinemsions"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/GetAppDinemsions"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"maxDoPerBornCount\": 93699991,\n  \"maxDoBornCount\": 87485082,\n  \"maxLifeMinutes\": 90876288,\n  \"waitMinutes\": 88608222,\n  \"pregnancyduration\": {\n    \"ticks\": 81068308,\n    \"days\": -86067585,\n    \"hours\": 23265876,\n    \"milliseconds\": -74312528,\n    \"minutes\": -67621255,\n    \"seconds\": -39850645,\n    \"totalDays\": -80048335.23520602,\n    \"totalHours\": -4789144.8703843355,\n    \"totalMilliseconds\": 25939624.81698227,\n    \"totalMinutes\": -23484589.357076973,\n    \"totalSeconds\": -48479524.79791422\n  },\n  \"appLifeTime\": {\n    \"ticks\": -81345187,\n    \"days\": -53858075,\n    \"hours\": 34719468,\n    \"milliseconds\": -13798628,\n    \"minutes\": 69581905,\n    \"seconds\": -88010965,\n    \"totalDays\": 32551170.243969053,\n    \"totalHours\": -23361750.847005114,\n    \"totalMilliseconds\": 11274761.354327187,\n    \"totalMinutes\": -42197065.48230317,\n    \"totalSeconds\": 62001158.70580509\n  }\n}"
+				}
+			]
+		},
+		{
+			"name": "/HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain"
+					}
+				],
+				"url": "{{baseUrl}}/HealthCheck"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/HealthCheck"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "true"
+				}
+			]
+		},
+		{
+			"name": "/StartRabbitFarmSimulation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/StartRabbitFarmSimulation"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/StartRabbitFarmSimulation"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/StopRabbitFarmSimulation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain"
+					}
+				],
+				"url": "{{baseUrl}}/StopRabbitFarmSimulation"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/StopRabbitFarmSimulation"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"animalTypeName\": \"dolor anim pariatur commodo sunt\",\n  \"animalCount\": 90020418,\n  \"maleCount\": 43562619,\n  \"babyAnimalCount\": 51227668,\n  \"feMaleCount\": 12305499,\n  \"pregnantCount\": -89074832,\n  \"postpartumCount\": 68597378,\n  \"simulationStatus\": \"consectetur id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/GetRabbitFarmSimulationStatusReport",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain"
+					}
+				],
+				"url": "{{baseUrl}}/GetRabbitFarmSimulationStatusReport"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/GetRabbitFarmSimulationStatusReport"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"animalTypeName\": \"dolor anim pariatur commodo sunt\",\n  \"animalCount\": 90020418,\n  \"maleCount\": 43562619,\n  \"babyAnimalCount\": 51227668,\n  \"feMaleCount\": 12305499,\n  \"pregnantCount\": -89074832,\n  \"postpartumCount\": 68597378,\n  \"simulationStatus\": \"consectetur id\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
